@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium General Cleaning | San Jose &amp; Bay Area</title>
+<meta name="description" content="Premium General Cleaning provides residential, commercial, and specialty cleaning services across San Jose and the Bay Area. Licensed, insured, and family-run.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#122642;
+    --navy-deep:#0B1B30;
+    --blue:#2E6DA6;
+    --blue-light:#6FB8E8;
+    --green:#5CB338;
+    --green-dark:#3E8E24;
+    --cream:#F7F9FB;
+    --paper:#FFFFFF;
+    --ink:#16202B;
+    --gray:#5B6B7A;
+    --line: rgba(20,40,65,0.10);
+    --shadow: 0 20px 50px -20px rgba(18,38,66,0.25);
+    --radius: 14px;
+    --maxw: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  h1,h2,h3,h4{
+    font-family:'Sora',system-ui,sans-serif;
+    margin:0;
+    color:var(--navy-deep);
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  section{padding:clamp(56px,8vw,110px) 0;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--green-dark);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:2px;
+    background:var(--green);
+    display:inline-block;
+    border-radius:2px;
+  }
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px);margin-top:14px;line-height:1.15;}
+  .section-head p.lede{margin-top:14px;color:var(--gray);font-size:17px;}
+
+  /* swoosh divider — brand signature, echoes the logo arc */
+  .swoosh{width:120px;height:14px;margin-top:16px;}
+  .swoosh path{
+    fill:none;stroke:var(--green);stroke-width:5;stroke-linecap:round;
+    stroke-dasharray:180;stroke-dashoffset:180;
+    transition:stroke-dashoffset 1s cubic-bezier(.2,.7,.2,1);
+  }
+  .swoosh.in-view path{stroke-dashoffset:0;}
+
+  /* sparkle motif */
+  .sparkle{position:absolute;color:var(--blue-light);opacity:0.9;}
+  @keyframes twinkle{
+    0%,100%{opacity:0.25;transform:scale(0.85);}
+    50%{opacity:1;transform:scale(1.05);}
+  }
+  .sparkle{animation:twinkle 3.2s ease-in-out infinite;}
+
+  button, .btn{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    border:none;
+    border-radius:999px;
+    padding:14px 26px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 12px 26px -10px rgba(92,179,56,0.55);}
+  .btn-primary:hover{background:var(--green-dark);transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--navy-deep);border:1.5px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--navy-deep);}
+  .btn-on-dark{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.35);}
+  .btn-on-dark:hover{border-color:#fff;}
+  a.btn:focus-visible, button:focus-visible{outline:3px solid var(--blue-light);outline-offset:3px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,249,251,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:var(--maxw);margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand img{height:46px;width:auto;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-weight:600;font-size:14.5px;color:var(--navy-deep);}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-phone{font-weight:700;font-size:14.5px;color:var(--navy-deep);white-space:nowrap;}
+  .menu-btn{display:none;background:none;border:none;padding:8px;}
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-phone{display:none;}
+  }
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;padding-top:clamp(48px,7vw,88px);}
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:center;
+  }
+  .hero h1{font-size:clamp(38px,5.4vw,62px);line-height:1.06;margin-top:18px;}
+  .hero h1 .accent{color:var(--green);}
+  .hero p.sub{margin-top:20px;font-size:18px;color:var(--gray);max-width:480px;}
+  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .hero-badges{display:flex;gap:22px;margin-top:40px;flex-wrap:wrap;}
+  .hero-badge{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--navy);}
+  .hero-badge svg{width:18px;height:18px;color:var(--green-dark);flex-shrink:0;}
+
+  .hero-art{position:relative;height:440px;}
+  .hero-art svg{width:100%;height:100%;}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{height:280px;order:-1;}
+  }
+
+  /* TRUST BAR */
+  .trustbar{background:var(--navy-deep);color:#fff;padding:34px 0;}
+  .trust-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .trust-item{display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:600;flex:1;min-width:200px;}
+  .trust-item svg{width:24px;height:24px;color:var(--green);flex-shrink:0;}
+
+  /* SERVICES */
+  .service-group{margin-bottom:52px;}
+  .service-group:last-child{margin-bottom:0;}
+  .service-group-label{
+    display:flex;align-items:baseline;gap:14px;margin-bottom:22px;
+  }
+  .service-group-label h3{font-size:21px;}
+  .service-group-label span{
+    font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--gray);text-transform:uppercase;
+  }
+  .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+  .service-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent;}
+  .service-icon{
+    width:44px;height:44px;border-radius:11px;
+    background:linear-gradient(145deg,var(--blue-light),var(--blue));
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .service-icon svg{width:22px;height:22px;color:#fff;}
+  .service-card h4{font-size:16.5px;margin-bottom:6px;}
+  .service-card p{font-size:14.5px;color:var(--gray);}
+
+  /* GALLERY */
+  .gallery{background:var(--paper);}
+  .gallery-group{margin-bottom:52px;}
+  .gallery-group:last-child{margin-bottom:0;}
+  .gallery-group-label{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;}
+  .gallery-group-label h3{font-size:20px;}
+  .gallery-group-label span{font-size:12px;font-weight:700;letter-spacing:0.1em;color:var(--gray);text-transform:uppercase;}
+
+  .ba-pair{
+    display:grid;grid-template-columns:1fr 1fr;gap:2px;
+    border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow);margin-bottom:18px;
+  }
+  .ba-shot{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--navy);}
+  .ba-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+  .ba-shot:hover img{transform:scale(1.045);}
+  .ba-tag{
+    position:absolute;top:12px;left:12px;
+    font-family:'Inter',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:0.08em;
+    padding:6px 12px;border-radius:999px;color:#fff;text-transform:uppercase;
+  }
+  .ba-tag.before{background:rgba(18,38,66,0.82);}
+  .ba-tag.after{background:var(--green-dark);}
+  @media (max-width:640px){ .ba-pair{grid-template-columns:1fr;} }
+
+  .photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;}
+  .photo-shot{position:relative;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+  .photo-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+  .photo-shot:hover img{transform:scale(1.045);}
+  .photo-cap{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(0deg,rgba(11,27,48,0.82),transparent);
+    color:#fff;font-size:12.5px;font-weight:600;padding:22px 14px 10px;
+  }
+
+  /* PROCESS */
+  .process{background:var(--paper);}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .process-step{position:relative;padding:0 20px 0 0;}
+  .process-num{
+    font-family:'Sora',sans-serif;font-weight:800;font-size:15px;
+    width:36px;height:36px;border-radius:50%;
+    background:var(--navy-deep);color:#fff;
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .process-step h4{font-size:16.5px;margin-bottom:8px;}
+  .process-step p{font-size:14.5px;color:var(--gray);}
+  .process-line{
+    position:absolute;top:18px;left:36px;right:-20px;height:2px;
+    background:repeating-linear-gradient(90deg,var(--line) 0 8px, transparent 8px 14px);
+  }
+  .process-step:last-child .process-line{display:none;}
+  @media (max-width:860px){
+    .process-grid{grid-template-columns:1fr;gap:28px;}
+    .process-line{display:none;}
+  }
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 0.85fr;gap:56px;align-items:center;}
+  .about-copy p{color:var(--gray);font-size:16px;margin-top:16px;}
+  .about-stats{display:flex;gap:34px;margin-top:32px;flex-wrap:wrap;}
+  .about-stat b{font-family:'Sora',sans-serif;font-size:30px;color:var(--navy-deep);display:block;}
+  .about-stat span{font-size:13px;color:var(--gray);}
+  .about-art{position:relative;height:340px;}
+  .about-art svg{width:100%;height:100%;}
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr;}
+    .about-art{order:-1;height:240px;}
+  }
+
+  /* CONTACT */
+  .contact{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden;}
+  .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;}
+  .contact-info h2{color:#fff;font-size:clamp(28px,3.6vw,38px);}
+  .contact-info p.lede{color:rgba(255,255,255,0.7);margin-top:14px;font-size:16.5px;max-width:420px;}
+  .contact-detail{display:flex;gap:14px;align-items:flex-start;margin-top:22px;}
+  .contact-detail svg{width:20px;height:20px;color:var(--green);flex-shrink:0;margin-top:2px;}
+  .contact-detail b{display:block;font-size:14.5px;}
+  .contact-detail span{font-size:14px;color:rgba(255,255,255,0.65);}
+  .service-area{margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.14);}
+  .service-area b{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);}
+  .area-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .area-tags span{
+    font-size:13px;padding:6px 12px;border-radius:999px;
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);
+  }
+
+  .form-card{
+    background:#fff;border-radius:18px;padding:32px;color:var(--ink);box-shadow:0 30px 70px -30px rgba(0,0,0,0.5);
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px;color:var(--navy-deep);}
+  .field input, .field select, .field textarea{
+    width:100%;padding:12px 14px;border-radius:9px;border:1.5px solid var(--line);
+    font-family:'Inter',sans-serif;font-size:14.5px;background:var(--cream);color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:2.5px solid var(--blue-light);border-color:transparent;}
+  .field textarea{resize:vertical;min-height:90px;}
+  .form-card .btn-primary{width:100%;justify-content:center;padding:15px;font-size:15.5px;margin-top:6px;}
+  @media (max-width:900px){
+    .contact-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+
+  footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,0.1);padding:34px 0;}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
+  .footer-row .brand img{height:34px;}
+  .footer-row p{color:rgba(255,255,255,0.5);font-size:13px;}
+  .footer-links{display:flex;gap:22px;}
+  .footer-links a{font-size:13.5px;color:rgba(255,255,255,0.7);}
+  .footer-links a:hover{color:#fff;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal, .swoosh path, .sparkle, .service-card, .btn{transition:none !important;animation:none !important;}
+    .reveal{opacity:1;transform:none;}
+    .swoosh path{stroke-dashoffset:0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- reusable sparkle symbol -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="spark" viewBox="0 0 24 24">
+    <path d="M12 0 C12.5 7 17 11.5 24 12 C17 12.5 12.5 17 12 24 C11.5 17 7 12.5 0 12 C7 11.5 11.5 7 12 0 Z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="nav">
+    <div class="brand"><img src="assets/logo.png" alt="Premium General Cleaning logo"></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#process">How It Works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:14085550100">(408) 555-0100</a>
+      <a class="btn btn-primary" href="#contact">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">San Jose &amp; the Bay Area</span>
+      <h1>Spotless spaces,<br>on <span class="accent">your</span> schedule.</h1>
+      <p class="sub">Premium General Cleaning handles the mess so you don't have to — from move-out deep cleans to full commercial janitorial contracts, done right the first time.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">Get a Free Quote</a>
+        <a class="btn btn-ghost" href="tel:14085550100">Call (408) 555-0100</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/><path d="m8.5 12 2.5 2.5 5-5"/></svg>Licensed &amp; Insured</div>
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Satisfaction Guaranteed</div>
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Family Owned</div>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 420 440" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bld1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6FB8E8"/><stop offset="1" stop-color="#2E6DA6"/>
+          </linearGradient>
+          <linearGradient id="bld2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2E6DA6"/><stop offset="1" stop-color="#122642"/>
+          </linearGradient>
+        </defs>
+        <path d="M40 340 C 40 380, 120 400, 210 400 C 300 400, 380 380, 380 340" fill="none" stroke="#5CB338" stroke-width="10" stroke-linecap="round"/>
+        <rect x="110" y="150" width="80" height="220" rx="4" fill="url(#bld2)"/>
+        <rect x="200" y="90" width="90" height="280" rx="4" fill="url(#bld1)"/>
+        <rect x="300" y="190" width="60" height="180" rx="4" fill="url(#bld2)"/>
+        <g fill="#F7F9FB" opacity="0.85">
+          <rect x="125" y="170" width="12" height="12"/><rect x="150" y="170" width="12" height="12"/>
+          <rect x="125" y="200" width="12" height="12"/><rect x="150" y="200" width="12" height="12"/>
+          <rect x="125" y="230" width="12" height="12"/><rect x="150" y="230" width="12" height="12"/>
+          <rect x="220" y="115" width="14" height="14"/><rect x="250" y="115" width="14" height="14"/>
+          <rect x="220" y="150" width="14" height="14"/><rect x="250" y="150" width="14" height="14"/>
+          <rect x="220" y="185" width="14" height="14"/><rect x="250" y="185" width="14" height="14"/>
+          <rect x="315" y="215" width="12" height="12"/><rect x="335" y="215" width="12" height="12"/>
+          <rect x="315" y="245" width="12" height="12"/><rect x="335" y="245" width="12" height="12"/>
+        </g>
+        <use href="#spark" x="60" y="60" width="26" height="26" class="sparkle" style="animation-delay:0s;color:#6FB8E8"/>
+        <use href="#spark" x="300" y="40" width="20" height="20" class="sparkle" style="animation-delay:.6s;color:#5CB338"/>
+        <use href="#spark" x="350" y="140" width="16" height="16" class="sparkle" style="animation-delay:1.1s;color:#6FB8E8"/>
+        <use href="#spark" x="70" y="260" width="18" height="18" class="sparkle" style="animation-delay:1.6s;color:#5CB338"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trustbar">
+  <div class="wrap trust-row">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>Licensed, Bonded &amp; Insured</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.4 15a8.5 8.5 0 1 1-3.4-14.5"/><circle cx="12" cy="12" r="2"/></svg>Serving All of the Bay Area</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>Flexible Scheduling</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Locally, Family Owned</div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>One crew, every kind of clean.</h2>
+      <svg class="swoosh" viewBox="0 0 120 14"><path d="M4 4 C 30 14, 90 14, 116 4"/></svg>
+      <p class="lede">Whether it's a single apartment turnover or a standing janitorial contract, Premium General Cleaning brings the same attention to detail to every job.</p>
+    </div>
+
+    <div class="service-group reveal">
+      <div class="service-group-label"><h3>Residential</h3><span>For homes &amp; move-outs</span></div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg></div>
+          <h4>Residential Cleaning</h4>
+          <p>Regular or one-time house cleaning — kitchens, bathrooms, floors, and every room in between.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg></div>
+          <h4>Carpet Cleaning</h4>
+          <p>Deep extraction cleaning that lifts stains, dirt, and odors out of high-traffic carpet.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18M5 20V9l7-5 7 5v11"/></svg></div>
+          <h4>Waxed Floor Cleaning</h4>
+          <p>Strip, wax, and buff for hardwood and tile floors that need to hold their shine.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="14" height="10" rx="1"/><path d="M17 10h3l1 2v5h-4"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg></div>
+          <h4>Moving Cleaning</h4>
+          <p>Move-in and move-out cleans that get a place inspection-ready or move-in fresh.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-group reveal">
+      <div class="service-group-label"><h3>Commercial</h3><span>For businesses &amp; properties</span></div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 21v-5h6v5M9 7h1M14 7h1M9 11h1M14 11h1"/></svg></div>
+          <h4>Commercial Cleaning</h4>
+          <p>Scheduled cleaning for offices, retail spaces, and storefronts that keeps things client-ready.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h4>General Janitorial</h4>
+          <p>Ongoing janitorial service — restrooms, common areas, trash, and daily upkeep, on contract.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M6 21V10l6-6 6 6v11M10 21v-6h4v6"/></svg></div>
+          <h4>Construction Clean Up</h4>
+          <p>Post-construction debris, dust, and film removal so a finished space is ready to hand off.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h13l4 4v8H3z"/><circle cx="7.5" cy="18" r="1.5"/><circle cx="16.5" cy="18" r="1.5"/></svg></div>
+          <h4>Trash Out</h4>
+          <p>Full debris and junk removal for foreclosures, evictions, and property turnovers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-group reveal">
+      <div class="service-group-label"><h3>Specialty</h3><span>Add-on services</span></div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M12 4v16M4 12h16"/></svg></div>
+          <h4>Window Cleaning</h4>
+          <p>Streak-free interior and exterior window cleaning for homes and storefronts.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20 14 10M9 5l10 10M2 22l4-4"/></svg></div>
+          <h4>Pressure Washing</h4>
+          <p>Driveways, sidewalks, siding, and patios blasted clean of grime and buildup.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21c4-1 5-2 6-6l9-9 3 3-9 9c-4 1-5 2-6 6M14 4l3 3"/></svg></div>
+          <h4>Apartment Painting</h4>
+          <p>Turnover painting for rental units — walls patched, primed, and painted between tenants.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Work</span>
+      <h2>Real jobs, real results.</h2>
+      <svg class="swoosh" viewBox="0 0 120 14"><path d="M4 4 C 30 14, 90 14, 116 4"/></svg>
+      <p class="lede">A look at recent work across floor restoration, pressure washing, and commercial maintenance.</p>
+    </div>
+
+    <div class="gallery-group reveal">
+      <div class="gallery-group-label"><h3>Waxed Floor Restoration</h3><span>Strip &amp; Wax — Commercial</span></div>
+      <div class="ba-pair">
+        <div class="ba-shot"><span class="ba-tag before">Before</span><img src="assets/gallery/floor-before-1.jpg" alt="Worn commercial tile floor before stripping and waxing" loading="lazy"></div>
+        <div class="ba-shot"><span class="ba-tag after">After</span><img src="assets/gallery/floor-after-1.jpg" alt="Freshly stripped and waxed commercial hallway floor" loading="lazy"></div>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-shot"><img src="assets/gallery/floor-after-2.jpg" alt="Large commercial floor after wax and buff" loading="lazy"><span class="photo-cap">Full facility result</span></div>
+      </div>
+    </div>
+
+    <div class="gallery-group reveal">
+      <div class="gallery-group-label"><h3>Pressure Washing</h3><span>Walkways, Stairs &amp; Concrete</span></div>
+      <div class="ba-pair">
+        <div class="ba-shot"><span class="ba-tag before">Before</span><img src="assets/gallery/pw-before-1.jpg" alt="Concrete walkway with algae and grime before pressure washing" loading="lazy"></div>
+        <div class="ba-shot"><span class="ba-tag after">After</span><img src="assets/gallery/pw-after-1.jpg" alt="Clean concrete walkway after pressure washing" loading="lazy"></div>
+      </div>
+      <div class="ba-pair">
+        <div class="ba-shot"><span class="ba-tag before">Before</span><img src="assets/gallery/pw-stairs-before.jpg" alt="Stair landing with algae buildup before pressure washing" loading="lazy"></div>
+        <div class="ba-shot"><span class="ba-tag after">After</span><img src="assets/gallery/pw-stairs-after.jpg" alt="Clean stair landing after pressure washing" loading="lazy"></div>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-shot"><img src="assets/gallery/pw-alley-after.jpg" alt="Clean loading area concrete after pressure washing" loading="lazy"><span class="photo-cap">Loading area — completed</span></div>
+      </div>
+    </div>
+
+    <div class="gallery-group reveal">
+      <div class="gallery-group-label"><h3>Deep Equipment Cleaning</h3><span>Construction &amp; Specialty</span></div>
+      <div class="photo-grid">
+        <div class="photo-shot"><img src="assets/gallery/grill-1.jpg" alt="Commercial grill interior before deep cleaning" loading="lazy"><span class="photo-cap">Grill deep clean — in progress</span></div>
+        <div class="photo-shot"><img src="assets/gallery/grill-2.jpg" alt="Commercial grill burners being deep cleaned" loading="lazy"><span class="photo-cap">Grill deep clean — in progress</span></div>
+      </div>
+    </div>
+
+    <div class="gallery-group reveal">
+      <div class="gallery-group-label"><h3>Commercial Floor Maintenance</h3><span>Lobby &amp; Common Areas</span></div>
+      <div class="photo-grid">
+        <div class="photo-shot"><img src="assets/gallery/lobby-1.jpg" alt="Commercial lobby wood-look floor being cleaned" loading="lazy"><span class="photo-cap">Lobby maintenance clean</span></div>
+        <div class="photo-shot"><img src="assets/gallery/lobby-2.jpg" alt="Commercial entryway floor cleaning with wet floor sign" loading="lazy"><span class="photo-cap">Lobby maintenance clean</span></div>
+        <div class="photo-shot"><img src="assets/gallery/lobby-3.jpg" alt="Commercial lobby floor cleaning near seating area" loading="lazy"><span class="photo-cap">Lobby maintenance clean</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>Booking a clean is four steps.</h2>
+      <svg class="swoosh" viewBox="0 0 120 14"><path d="M4 4 C 30 14, 90 14, 116 4"/></svg>
+    </div>
+    <div class="process-grid reveal">
+      <div class="process-step"><div class="process-line"></div><div class="process-num">1</div><h4>Request a Quote</h4><p>Tell us about the space and what needs to be done — online or by phone.</p></div>
+      <div class="process-step"><div class="process-line"></div><div class="process-num">2</div><h4>Walk-Through</h4><p>We confirm scope, timeline, and price before any work starts. No surprises.</p></div>
+      <div class="process-step"><div class="process-line"></div><div class="process-num">3</div><h4>We Clean</h4><p>Our crew shows up on schedule with everything needed to get the job done.</p></div>
+      <div class="process-step"><div class="process-num">4</div><h4>Follow-Up Check</h4><p>We walk the space with you after to make sure everything meets your standard.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="eyebrow">About Us</span>
+      <h2 style="font-size:clamp(28px,3.6vw,38px);margin-top:14px;">Family-run, Bay Area based.</h2>
+      <p>Premium General Cleaning is a locally owned cleaning company serving San Jose and the greater Bay Area. We built the business on doing the job right the first time — no shortcuts, no rescheduling, no surprises on the invoice.</p>
+      <p>From single apartments to full commercial contracts, every job gets the same crew, the same standards, and someone who picks up the phone when you call.</p>
+      <div class="about-stats">
+        <div class="about-stat"><b>100%</b><span>Satisfaction Guarantee</span></div>
+        <div class="about-stat"><b>7 Days</b><span>Flexible Scheduling</span></div>
+        <div class="about-stat"><b>Bay Area</b><span>Wide Service Coverage</span></div>
+      </div>
+    </div>
+    <div class="about-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 380 340" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 260 C 20 300, 100 320, 190 320 C 280 320, 360 300, 360 260" fill="none" stroke="#5CB338" stroke-width="9" stroke-linecap="round"/>
+        <rect x="70" y="120" width="70" height="160" rx="4" fill="#122642"/>
+        <rect x="150" y="70" width="80" height="210" rx="4" fill="url(#bld1)"/>
+        <rect x="240" y="150" width="55" height="130" rx="4" fill="#2E6DA6"/>
+        <use href="#spark" x="40" y="40" width="20" height="20" class="sparkle" style="color:#6FB8E8"/>
+        <use href="#spark" x="290" y="30" width="16" height="16" class="sparkle" style="animation-delay:.8s;color:#5CB338"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow" style="color:var(--green)">Get In Touch</span>
+      <h2>Get a free quote today.</h2>
+      <p class="lede">Tell us about the job and we'll get back to you with a straightforward quote — usually the same day.</p>
+
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.7 2Z"/></svg>
+        <div><b>(408) 555-0100</b><span>Mon–Sat, 7am–6pm</span></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+        <div><b>info@premiumgeneralcleaning.com</b><span>We reply within one business day</span></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><b>San Jose, CA</b><span>Serving the greater Bay Area</span></div>
+      </div>
+
+      <div class="service-area">
+        <b>Service Area</b>
+        <div class="area-tags">
+          <span>San Jose</span><span>Santa Clara</span><span>Sunnyvale</span><span>Milpitas</span>
+          <span>Campbell</span><span>Fremont</span><span>Palo Alto</span><span>+ Surrounding Areas</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-card reveal" id="quote-form" action="https://formspree.io/f/mdenaqzj" method="POST" onsubmit="return handleSubmit(event)">
+      <div class="form-row">
+        <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" required placeholder="Jane Smith"></div>
+        <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" required placeholder="(408) 555-0123"></div>
+      </div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@example.com"></div>
+      <div class="form-row">
+        <div class="field">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option>Residential Cleaning</option>
+            <option>Commercial Cleaning</option>
+            <option>Carpet Cleaning</option>
+            <option>Waxed Floor Cleaning</option>
+            <option>Construction Clean Up</option>
+            <option>Window Cleaning</option>
+            <option>Pressure Washing</option>
+            <option>Trash Out</option>
+            <option>Moving Cleaning</option>
+            <option>Apartment Painting</option>
+            <option>General Janitorial</option>
+            <option>Not Sure / Multiple</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="type">Property Type</label>
+          <select id="type" name="type">
+            <option>Residential</option>
+            <option>Commercial / Office</option>
+            <option>Apartment / Multi-Unit</option>
+            <option>Construction Site</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="message">Tell Us About the Job</label><textarea id="message" name="message" placeholder="Square footage, timeline, anything else we should know..."></textarea></div>
+      <button type="submit" class="btn btn-primary">Request My Free Quote</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="brand"><img src="assets/logo.png" alt="Premium General Cleaning logo"></div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p>© 2026 Premium General Cleaning. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal + swoosh draw
+  const observed = document.querySelectorAll('.reveal, .swoosh');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  observed.forEach(el => io.observe(el));
+
+  async function handleSubmit(e){
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        btn.textContent = 'Request Sent — We\'ll Be in Touch';
+        btn.style.background = '#3E8E24';
+        form.reset();
+      } else {
+        btn.textContent = 'Something Went Wrong — Try Again';
+        btn.style.background = '#B3452E';
+      }
+    } catch (err) {
+      btn.textContent = 'Something Went Wrong — Try Again';
+      btn.style.background = '#B3452E';
+    }
+
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+
+    return false;
+  }
+</script>
+
+</body>
+</html>
